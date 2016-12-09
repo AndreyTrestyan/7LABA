@@ -86,17 +86,15 @@ void Triangle::Length()
 
 bool Triangle::Ravnost()
 {
-	if ((length[0] == length[1]) & (length[1] == length[2]) & (length[2] == length[0]))
-		return true;
+	return (length[0] == length[1]) & (length[1] == length[2]) & (length[2] == length[0]);
 }
 
 
 bool Triangle::Ravnobed()
 {
-	if (((length[0] == length[1]) & (length[0] != length[2])) |
+	return (((length[0] == length[1]) & (length[0] != length[2])) |
 		((length[1] == length[2]) & (length[1] != length[0])) |
-		((length[2] == length[0]) & (length[1] != length[0])))
-		return true;
+		((length[2] == length[0]) & (length[1] != length[0])));
 }
 
 
@@ -104,34 +102,28 @@ bool Triangle::Ravnobed()
 
 bool Triangle::Pryamoug()
 {
-	if (length[0] == sqrt(pow(length[1], 2) + pow(length[2], 2)) |
-		length[1] == sqrt(pow(length[0], 2) + pow(length[2], 2)) |
-		length[2] == sqrt(pow(length[1], 2) + pow(length[0], 2)))
-		return true;
+	return (length[0] == sqrt(pow(length[1], 2) + pow(length[2], 2))) ||
+		(length[1] == sqrt(pow(length[0], 2) + pow(length[2], 2))) ||
+		(length[2] == sqrt(pow(length[1], 2) + pow(length[0], 2)));
 }
 
 bool Triangle::Proizvol()
 {
-	if ((length[0] != length[1] & length[0] != length[2] & length[2] != length[1] &
-		(length[0] != sqrt(pow(length[1], 2) + pow(length[2], 2))) &
-		length[1] != sqrt(pow(length[0], 2) + pow(length[2], 2)) &
-		length[2] != sqrt(pow(length[1], 2) + pow(length[0], 2))))
-		return true;
+	return ((length[0] != length[1]) & (length[0] != length[2]) & (length[2] != length[1]) &
+		(length[0] != (sqrt(pow(length[1], 2) + pow(length[2], 2)))) &
+		(length[1] != (sqrt(pow(length[0], 2) + pow(length[2], 2)))) &
+		(length[2] != (sqrt(pow(length[1], 2) + pow(length[0], 2)))));
 }
 
 
 
 bool Triangle::CheckTriangle()
 {
-	if (length[0] + length[1] < length[2] | length[0] + length[2] < length[1] | length[1] + length[2] < length[0])
-	{
-		return false;
-	}
-
+	return (((length[0] + length[1]) < length[2]) || ((length[0] + length[2]) < length[1]) | ((length[1] + length[2]) < length[0]));
 }
 
 
-int Triangle::GetPer()
+double Triangle::GetPer()
 {
 	Length();
 	return length[0] + length[1] + length[2];

@@ -1,0 +1,15 @@
+﻿Сборка начата 09.12.2016 21:21:58.
+     1>Проект "C:\github\trestyan\7LABA\stack\stack.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\github\trestyan\7laba\stack\triangle.h(24): warning C4244: return: преобразование "double" в "int", возможна потеря данных
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\github\trestyan\7LABA\x64\Debug\stack.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:\github\trestyan\7LABA\x64\Debug\stack.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\github\trestyan\7LABA\x64\Debug\stack.lib" /MACHINE:X64 x64\Debug\main.obj
+         x64\Debug\triangle.obj
+         stack.vcxproj -> C:\github\trestyan\7LABA\x64\Debug\stack.exe
+     1>Сборка проекта "C:\github\trestyan\7LABA\stack\stack.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:01.48

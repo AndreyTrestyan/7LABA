@@ -18,7 +18,11 @@ public:
 	bool Ravnobed();
 	void Length(); // + lenght check (if < 0  - ERROR)
 	bool CheckTriangle();
-	int GetPer();
+	double GetPer();
+	operator int()
+	{
+		return this->GetPer();
+	}
 	Triangle(int, int, int, int, int, int);
 	Triangle( Triangle &obj);
 	Triangle();

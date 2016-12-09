@@ -21,13 +21,10 @@ struct ELEMENT
 
 
 
-typedef  ELEMENT<Triangle>* LPELEMENT;
-
-
 
 template <class T>
 class STACK
-{	
+{
 private:
 	int numberofelements = 0; // количество элементов по умолчанию
 public:
@@ -38,10 +35,10 @@ public:
 	bool Empty(int Content);
 	int Full(int Content);
 	void OutPut();
-	LPELEMENT Start;
+	ELEMENT<T>* Start;
 
 
-	friend STACK<T> operator + ( STACK<T>& x, const int n)
+	friend STACK<T> operator + (STACK<T>& x, const int n)
 	{
 		x.Push(n);
 		return x;
@@ -56,7 +53,7 @@ public:
 
 	operator bool() const
 	{
-		
+
 		if (!Start || Start == NULL)
 		{
 			return true;
@@ -76,7 +73,7 @@ public:
 			return y;
 		}
 		int *n = new int[numberofelements];
-		LPELEMENT Temp = Start;
+		ELEMENT<T>* Temp = Start;
 		while (Temp)
 		{
 			n[i] = Temp->Content;
@@ -147,7 +144,7 @@ int STACK<T>::Full(int Content) // проверка на полноту
 template <class T>
 int STACK<T>::Push(T Content) // добавить элемент на верх
 {
-	LPELEMENT NE = new ELEMENT<T>;
+	ELEMENT<T>* NE = new ELEMENT<T>;
 	if (!NE)
 		return 0;
 	NE->Content = Content;
@@ -164,7 +161,7 @@ int STACK<T>::Pop(T &Content) // извлечь элемент с верхушки
 		return 0;
 	Content = Start->Content;
 	int k = Start->Content;
-	LPELEMENT Temp = Start;
+	ELEMENT<T>* Temp = Start;
 	Start = Start->Next;
 	delete Temp;
 	numberofelements--;
@@ -179,7 +176,7 @@ void STACK<T>::OutPut() // вывод стека на консоль
 		cout << "Stack is empty" << endl;
 		return;
 	}
-	LPELEMENT Temp = Start;
+	ELEMENT<T>* Temp = Start;
 	while (Temp)
 	{
 		cout << Temp->Content << endl;
@@ -187,30 +184,4 @@ void STACK<T>::OutPut() // вывод стека на консоль
 	}
 	cout << "\n\n" << endl;
 
-}
-
-template <class Tem>
-int Bigger(Tem &obj, int n)
-{
-	int i = 0;
-
-	if (!obj.Start)
-	{
-		cout << "Stack is empty" << endl;
-		return 0;
-	}
-	LPELEMENT Temp = obj.Start;
-	while (Temp)
-	{
-		if (Temp->Content > n)
-		{
-		cout << "Ёлемент больше заданного ! " << endl;
-			i++;
-		}
-		Temp = Temp->Next;
-	}
-	cout << "\n\n" << endl;
-
-
-	return i;
 }

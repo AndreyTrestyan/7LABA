@@ -7,6 +7,22 @@
 
 using namespace std;
 
+template <class T>
+int Bigger(T obj, int n)
+{
+	int i = 0;
+	T * temp = &obj;
+	while (temp)
+	{
+		if (temp->Content > n)
+		{
+			i++;
+		}
+		temp = temp->Next;
+	}
+	return i;
+}
+
 void main()
 {
 	setlocale(LC_ALL, "Russian");
@@ -43,21 +59,21 @@ void main()
 	cout << "Периметры : " << endl;
 	cout << a.GetPer() << endl;
 	cout << b.GetPer() << endl;
-	cout << c.GetPer() << endl;
+	cout << c.GetPer() << endl << endl;
 	
 	
 	STACK<Triangle> test;
 	test.Push(a);
 	test.Push(b);
 	test.Push(c);
-	cout << Bigger<STACK<Triangle>>(test, 7) << endl;
+	cout << "Result for Triangle: " << Bigger<ELEMENT<Triangle>>(*(test.Start), 7) << endl << endl;
 	
-	/*STACK<int> test2;
+	STACK<int> test2;
 	test2.Push(123);
 	test2.Push(100);
 	test2.Push(70);
-	cout << Bigger<STACK<int>>(test2, 80) << endl;
-	*/
+	cout << "Result for int: " << Bigger<ELEMENT<int>>(*(test2.Start), 80) << endl;
+	
 
 
 	system("pause");
